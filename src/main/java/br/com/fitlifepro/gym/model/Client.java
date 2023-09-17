@@ -3,12 +3,22 @@ package br.com.fitlifepro.gym.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
+
 
 @Entity
 @Table(name = "clients")
@@ -18,15 +28,39 @@ public class Client {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int idClient;
 
+  @NotBlank(message = "O nome precisa ser preenchido")
   private String name;
+
+  @Past(message = "A data de nascimento deve estar no passado")
+  @DateTimeFormat(pattern = "dd-MM-yyyy")
+  @NotNull(message = "A data de nascimento precisa ser preenchida")
   private LocalDate dateOfBirth;
+
   private String gender;
+
+  @NotBlank(message = "A rua precisa ser preenchida")
   private String street;
+
+ @NotBlank(message = "O bairro precisa ser preenchido")
   private String district;
+
+  @Pattern(regexp = "^\\+(?:[0-9] ?){6,14}[0-9]$", message = "Número de telefone inválido")
+  @NotBlank(message = "O número precisa ser preenchido")
   private String number;
+  
+  @Email(message = "Informe um email válido")
   private String email;
-  private float height;
-  private float weight;
+  
+  @NotNull
+  @DecimalMin(value = "0.0", message = "A altura precisa ser maior ou igual a 0")
+  @Positive(message = "Informe uma altura válida")
+  private Float height;
+
+  @NotNull
+  @DecimalMin(value = "0.0", message = "O peso precisa ser maior ou igual a 0")
+  @Positive(message = "Informe um peso válido")
+  private Float weight;
+
   private String fitnessGoals;
   private String medicalHistory;
   private String registrationDate;
