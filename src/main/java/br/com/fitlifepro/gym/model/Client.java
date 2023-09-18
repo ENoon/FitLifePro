@@ -63,7 +63,7 @@ public class Client {
 
   private String fitnessGoals;
   private String medicalHistory;
-  private String registrationDate;
+  private LocalDate registrationDate;
 
   @OneToMany(mappedBy = "client") // Relacionamento com avaliações físicas 
   private List<PhysicalAssessment> physicalAssessments;
@@ -145,10 +145,10 @@ public class Client {
     this.medicalHistory = medicalHistory;
   }
 
-  public String getRegistrationDate() {
+  public LocalDate getRegistrationDate() {
     return registrationDate;
   }
-  public void setRegistrationDate(String registrationDate) {
+  public void setRegistrationDate(LocalDate registrationDate) {
     this.registrationDate = registrationDate;
   }
 

@@ -1,0 +1,85 @@
+*{
+  -webkit-box-sizing: border-box !important;/* Safari/Chrome*/
+  -moz-box-sizing: border-box !important;/* Firefox*/
+  box-sizing: border-box !important;/* IE8+/ Opera*/
+}
+
+body {
+  font-family: Arial;
+  font-size: 14px;
+  color: #5e5e5e;
+  line-height: 150%;
+}
+
+.box {
+  margin: auto;
+  width: 50%;
+  border: 1px #000000 solid;
+  border-radius: 6px;
+  padding: 30px;
+  background-color: #e0e0e0;
+}
+
+/*label {
+  margin-top: 30px;
+  margin-bottom: 6px;
+  display: block;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}*/
+
+/*table label {
+  margin-right: 20px;
+  margin-top: 0px;
+  display: inline;
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+}*/
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #555555;
+  font-size: 16px;
+  padding: 10px;
+  width:100%;
+  resize: none;
+  outline: none;
+  font-family: Arial;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+  color: #222;
+  font-size: 16px;
+  padding: 10px;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  margin-top: 30px;
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  color: white;
+  background-color: #355bc6;
+  font-size: 16px;
+  padding: 10px 20px
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+  background-color: #293b90;
+  color: white;
+}
